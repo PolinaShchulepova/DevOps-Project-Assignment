@@ -3,7 +3,8 @@ import redis
 import random
 
 app = Flask(__name__)
-r = redis.Redis(host='redis', port=6379, decode_responses=True)
+r = redis.Redis(host=os.getenv('REDIS_HOST', 'localhost'),port=6379, decode_responses=True)
+
 
 @app.route('/quote')
 def get_quote():
@@ -13,4 +14,4 @@ def get_quote():
     return random.choice(quotes)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=80, debug=True)
