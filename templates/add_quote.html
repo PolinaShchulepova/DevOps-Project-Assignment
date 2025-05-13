@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Add a Quote</title>
+</head>
+<body>
+  <h1>Add a New Quote</h1>
+
+  <form id="quoteForm">
+    <input type="text" id="quoteInput" placeholder="Enter your quote..." required />
+    <button type="submit">Add Quote</button>
+  </form>
+
+  <p id="result"></p>
+
+  <script>
+    const form = document.getElementById('quoteForm');
+    const result = document.getElementById('result');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const quote = document.getElementById('quoteInput').value;
+
+      const response = await fetch('/add-quote', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ quote })
+      });
+
+      const data = await response.json();
+      result.textContent = data.message || data.error || 'Something went wrong!';
+      form.reset();
+    });
+  </script>
+</body>
+</html>
