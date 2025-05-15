@@ -5,9 +5,10 @@ GitHub, Docker, and Docker-Compose Task
 
 This project is a small web application built with Python and Flask that lets users get and add quotes.  
 The quotes are saved in a Redis database, and every time you refresh the page, you get a random quote.
+Users can also personalize their experience by selecting the type of quotes they’d like to see — whether they’re in the mood for inspiration, a good laugh, or anything else that speaks to them.
 
 The application has two main parts:
-- One part that displays a random quote
+- One part that displays a random quote 
 - Another part that lets you add new quotes using a simple  HTML form
 
 Everything runs in Docker containers – both the app and the Redis database – and you can open the app with one simple command using Docker Compose.
@@ -21,7 +22,8 @@ DevOps-Project-Assignment/
  docker-compose.yml        
  requirements.txt         
  templates/
-   add_quote.html          
+   add_quote.html 
+   quote.html         
  README.md                  
 
 
@@ -66,8 +68,8 @@ DevOps-Project-Assignment/
 
 This project was developed by two team members:
 
-Polina Shchulepova: app.py-`/quote`, Dockerfile , README.md , requirements.txt
-Dor Outmezgine: Docker Compose, Redis volume , HTML form , app.py-`/add-quote`
+Polina Shchulepova: app.py-`/quote`, Dockerfile , README.md , requirements.txt, HTML quote
+Dor Outmezgine: Docker Compose, Redis volume , HTML add_quote , app.py-`/add-quote`
 
 # Data Persistence
 
