@@ -15,6 +15,8 @@ Everything runs in Docker containers – both the app and the Redis database –
 
 # Project Structure
 
+Project structure could be orgenized better
+
 DevOps-Project-Assignment/
 
  app.py                    
